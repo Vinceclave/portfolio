@@ -1,0 +1,68 @@
+﻿/* Base64 encoded simple placeholder image */
+export const placeholderImageBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzU1MDcwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MnB4IiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSI+SW1hZ2UgQ29taW5nIFNvb248L3RleHQ+PC9zdmc+';
+
+/**
+ * ImageWithFallback component that handles image loading with a fallback
+ * Optimized with React.memo and better loading management
+ */
+import React, { useState, useEffect, memo } from 'react';
+
+interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  fallbackSrc?: string;
+  lazy?: boolean;
+}
+
+const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
+  src,
+  alt,
+  fallbackSrc = '/images/placeholder.jpg',
+  className,
+  lazy = true,
+  ...rest
+}) => {
+  const [imgSrc, setImgSrc] = useState<string | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Only set the source when component mounts, not on every render
+    setImgSrc(src);
+    
+    // Clean up function to handle component unmounting
+    return () => {
+      // Cancel any pending operations if needed
+    };
+  }, [src]);
+
+  const handleError = () => {
+    setImgSrc(fallbackSrc);
+    setIsLoading(false);
+  };
+
+  const handleLoad = () => {
+    setIsLoading(false);
+  };
+  
+  return (
+    <div className="relative overflow-hidden">
+      {isLoading && (
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-[#e9e9e9] to-[#f5f5f5]"
+          style={{ opacity: isLoading ? 0.7 : 0 }}
+        />
+      )}
+      <img
+        src={imgSrc || placeholderImageBase64}
+        alt={alt}
+        onError={handleError}
+        onLoad={handleLoad}
+        loading={lazy ? "lazy" : "eager"}
+        decoding="async"
+        className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'} ${className || ''}`}
+        {...rest}
+      />
+    </div>
+  );
+};
+
+// Memoize the component to prevent unnecessary re-renders
+export default memo(ImageWithFallback);
