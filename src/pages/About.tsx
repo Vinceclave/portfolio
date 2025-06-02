@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion'
-// import { useCallback } from 'react'
 import { aboutData } from '../data/aboutData'
 import SectionAnimator from '../components/ui/SectionAnimator'
 
 const About = () => {
   const { aboutSection, skills } = aboutData
-  
-  // Memoized event handlers for better performance
-  // const handleResumeClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-  //   // You could add analytics tracking here
-  //   console.log('Resume downloaded')
-  //   // No need to prevent default since we want the browser to handle the download
-  // }, [])
+    // Memoized event handlers would go here if needed
   
   return (
     <>      {/* About Hero Section - Startup Style */}

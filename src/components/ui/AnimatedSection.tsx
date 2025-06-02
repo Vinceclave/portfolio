@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, memo, useMemo } from 'react';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { fadeInUp } from '../../utils/motionVariants';
 
 interface AnimatedSectionProps {
@@ -29,11 +30,14 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once, amount });
-  
-  // Memoize the transition options
+    // Memoize the transition options
   const transitionOptions = useMemo(() => ({ 
     delay, 
-    duration: variants?.visible?.transition?.duration || 0.5 
+    duration: typeof variants?.visible === 'object' && 
+      'transition' in variants.visible && 
+      typeof variants.visible.transition === 'object' && 
+      'duration' in variants.visible.transition ? 
+      variants.visible.transition.duration : 0.5 
   }), [delay, variants]);
 
   useEffect(() => {
