@@ -1,7 +1,7 @@
 /**
  * Animation variants for use with Framer Motion
  */
-import { Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 /**
  * Fade in animation with y-axis movement

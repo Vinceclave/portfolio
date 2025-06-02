@@ -1,5 +1,5 @@
 import { FaArrowRight } from 'react-icons/fa';
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 
 export interface SkillCard {
   title: string;

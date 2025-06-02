@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useRef, useCallback } from 'react'
+import { useCallback } from 'react'
 import { homeData } from '../data/homeData'
 import SectionAnimator from '../components/ui/SectionAnimator'
 import ImageWithFallback from '../components/ui/ImageWithFallback'

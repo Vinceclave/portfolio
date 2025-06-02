@@ -1,6 +1,6 @@
-import { FaDownload, FaReact, FaNodeJs, FaJs, FaJava, FaPython, FaPhp, FaGit, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaDownload, FaReact, FaNodeJs, FaJs, FaJava, FaPython, FaPhp, FaGit, FaHtml5 } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiMongodb, SiExpress, SiDotnet, SiMysql, SiTailwindcss } from 'react-icons/si';
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 
 export interface Skill {
   name: string;

@@ -1,14 +1,6 @@
 import { FaGithub, FaLinkedinIn, FaFacebookF, FaEnvelope } from 'react-icons/fa';
-import { IconType } from 'react-icons';
 
-export interface SocialLink {
-    name: string;
-    url: string;
-    icon: IconType;
-    label: string;
-}
-
-export const socialLinks: SocialLink[] = [
+export const socialLinks = [
   {
     name: 'GitHub',
     url: 'https://github.com/vinceclave',
