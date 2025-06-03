@@ -108,14 +108,13 @@ const Projects = () => {
               />
             </span>
             
-            {/* Decorative elements */}
-            <motion.div
-              className="absolute -right-6 -top-6 text-2xl"
+            {/* Decorative elements */}            <motion.div
+              className="absolute -right-6 -top-6"
               initial={{ opacity: 0, y: 10, rotate: 0 }}
               animate={{ opacity: 1, y: 0, rotate: 12 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
-              ✨
+              <img src="/images/star.png" alt="Star" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9" />
             </motion.div>
           </motion.h1>
           

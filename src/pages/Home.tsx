@@ -86,16 +86,15 @@ const Home = () => {
               <span className="w-2 h-2 rounded-full bg-[#E56B6F] mr-1.5 animate-pulse"></span>
               <span className="text-[#355070] dark:text-[#EAAC8B] font-medium">Available for new projects</span>
             </motion.div>
-            
-            <p className="text-sm xs:text-base sm:text-lg text-[#6D597A] dark:text-[#EAAC8B]/80 font-opensans max-w-xl relative">
+              <p className="text-sm xs:text-base sm:text-lg text-[#6D597A] dark:text-[#EAAC8B]/80 font-opensans max-w-xl relative">
               {hero.description}
               <motion.span
-                className="absolute -right-3 xs:-right-4 -top-1 xs:-top-2 text-base xs:text-lg sm:text-xl"
+                className="absolute -right-3 xs:-right-4 -top-1 xs:-top-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
               >
-                ✨
+                <img src="/images/star.png" alt="Star" className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7" />
               </motion.span>
             </p>
             
@@ -231,14 +230,13 @@ const Home = () => {
               scale: 1.05,
               boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             }}
-          >
-            <p className="text-[#6D597A] dark:text-[#EAAC8B]/90 text-xs xs:text-xs sm:text-sm font-medium flex items-center">
+          >            <p className="text-[#6D597A] dark:text-[#EAAC8B]/90 text-xs xs:text-xs sm:text-sm font-medium flex items-center">
               <motion.span
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ delay: 1.5, duration: 0.5 }}
                 className="mr-0.5 xs:mr-1"
               >
-                ✨
+                <img src="/images/star.png" alt="Star" className="w-3 h-3 xs:w-4 xs:h-4" />
               </motion.span>
               Full Stack Developer
               <motion.span
@@ -246,7 +244,7 @@ const Home = () => {
                 transition={{ delay: 1.5, duration: 0.5 }}
                 className="ml-0.5 xs:ml-1"
               >
-                ✨
+                <img src="/images/star.png" alt="Star" className="w-3 h-3 xs:w-4 xs:h-4" />
               </motion.span>
             </p>
           </motion.div>
@@ -315,8 +313,7 @@ const Home = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {skills.map((skill, index) => (
-              <SectionAnimator key={index} delay={index * 0.1}>                
-                <motion.div 
+              <SectionAnimator key={index} delay={index * 0.1}>                  <motion.div 
                   className="bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-md p-5 sm:p-6 md:p-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-2 relative overflow-hidden"
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.98 }}
@@ -326,7 +323,13 @@ const Home = () => {
                   
                   <div className="relative z-10">
                     <div className="w-12 h-12 xs:w-14 xs:h-14 rounded-lg bg-[#E56B6F]/10 dark:bg-[#E56B6F]/20 flex items-center justify-center mb-4">
-                      <span className="inline-block text-2xl sm:text-3xl">{index === 0 ? '✨' : index === 1 ? '🎨' : '📱'}</span>
+                      {index === 0 ? (
+                        <img src="/images/star.png" alt="Star" className="w-8 h-8 xs:w-9 xs:h-9" />
+                      ) : index === 1 ? (
+                        <img src="/images/placeholder.svg" alt="Design" className="w-8 h-8 xs:w-9 xs:h-9" />
+                      ) : (
+                        <img src="/images/placeholder.svg" alt="Mobile" className="w-8 h-8 xs:w-9 xs:h-9" />
+                      )}
                     </div>
                     
                     <h3 className="text-lg sm:text-xl font-luckiest text-[#355070] dark:text-[#EAAC8B] mb-2 sm:mb-3 group-hover:text-[#E56B6F] transition-colors duration-300">

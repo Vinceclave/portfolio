@@ -227,12 +227,12 @@ const Contact = () => {
           >
             {heading.description}
             <motion.span
-              className="absolute -right-3 xs:-right-4 -top-1 xs:-top-2 text-base xs:text-lg sm:text-xl"
+              className="absolute -right-3 xs:-right-4 -top-1 xs:-top-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              ✨
+              <img src="/images/star.png" alt="Star" className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7" />
             </motion.span>
           </motion.p>
         </div>

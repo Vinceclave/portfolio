@@ -92,7 +92,7 @@ const Header = () => {
       className={`fixed w-full top-0 left-0 z-50 transition-colors duration-300 ${
         isScrolled 
           ? 'py-3 bg-[#355070]/95 shadow-lg backdrop-blur-sm text-white dark:bg-[#1a202c]/95 dark:text-white' 
-          : 'py-5 bg-white/95 backdrop-blur-sm text-[#355070] dark:bg-white/90 dark:text-[#1a202c]'
+          : 'py-5 bg-transparent backdrop-blur-sm text-[#355070] dark:bg-white/90 dark:text-[#1a202c]'
       }`}
       initial={{ y: -100 }}
       animate={{ 

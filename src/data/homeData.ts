@@ -29,10 +29,9 @@ export interface HomeData {
 }
 
 export const homeData: HomeData = {
-  hero: {
-    title: "Crafting",
+  hero: {    title: "Crafting",
     highlightedText: "digital breakthroughs",
-    description: "Where innovation meets pixel-perfect design ✨ Transforming your boldest ideas into digital realities that captivate, engage, and scale. Ready to disrupt the digital landscape together?",
+    description: "Where innovation meets pixel-perfect design. Transforming your boldest ideas into digital realities that captivate, engage, and scale. Ready to disrupt the digital landscape together?",
     buttons: {
       primary: {
         text: "Explore Works",
