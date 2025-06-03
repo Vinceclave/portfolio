@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 /**
  * PageLoader component with a sleek, modern loading animation
  */
-const t aPageLoader = () => {
+const PageLoader = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
