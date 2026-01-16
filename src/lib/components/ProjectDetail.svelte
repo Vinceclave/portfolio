@@ -160,7 +160,9 @@
                     <img
                         src={project.image}
                         alt="{project.title} - Software Development Project"
+                        loading="lazy"
                         class="absolute -bottom-10 -right-10 w-full h-auto object-contain"
+                        onerror="this.style.display='none'"
                     />
                 </div>
             {/if}

@@ -16,7 +16,9 @@
             <img
                 src={profileImage}
                 alt="Vince Clave D. Igot"
-                class="w-full h-full object-cover object-top rounded-md border border-black/5 p-1"
+                fetchpriority="high"
+                loading="eager"
+                class="w-full h-full object-cover object-top rounded-md border border-black/5 p-1 bg-black/5"
             />
         </figure>
 
