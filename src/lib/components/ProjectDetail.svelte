@@ -157,12 +157,11 @@
                 <div
                     class="absolute bottom-0 right-0 w-1/2 h-1/2 overflow-hidden pointer-events-none opacity-10 grayscale mix-blend-multiply"
                 >
-                    <img
+                    <enhanced:img
                         src={project.image}
                         alt="{project.title} - Software Development Project"
                         loading="lazy"
                         class="absolute -bottom-10 -right-10 w-full h-auto object-contain"
-                        onerror="this.style.display='none'"
                     />
                 </div>
             {/if}

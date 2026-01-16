@@ -1,7 +1,7 @@
 <script lang="ts">
     import { MapPin, Linkedin, Github } from "lucide-svelte";
     import { fade } from "svelte/transition";
-    import profileImage from "$lib/assets/profile.png";
+    import profileImage from "$lib/assets/profile.png?enhanced";
 </script>
 
 <section
@@ -13,7 +13,7 @@
         <figure
             class="w-24 h-24 md:w-26 md:h-26 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-700 ease-studio"
         >
-            <img
+            <enhanced:img
                 src={profileImage}
                 alt="Vince Clave D. Igot"
                 fetchpriority="high"

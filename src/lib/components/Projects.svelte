@@ -1,10 +1,10 @@
 <script lang="ts">
     import { Code2, ExternalLink } from "lucide-svelte";
     import { createEventDispatcher } from "svelte";
-    import aidvocateImg from "$lib/assets/aidvocate.png";
-    import certifaiImg from "$lib/assets/certifai.png";
-    import psitsImg from "$lib/assets/psits.png";
-    import craftopiaImg from "$lib/assets/craftopia.png";
+    import aidvocateImg from "$lib/assets/aidvocate.png?enhanced";
+    import certifaiImg from "$lib/assets/certifai.png?enhanced";
+    import psitsImg from "$lib/assets/psits.png?enhanced";
+    import craftopiaImg from "$lib/assets/craftopia.png?enhanced";
 
     const dispatch = createEventDispatcher();
 
